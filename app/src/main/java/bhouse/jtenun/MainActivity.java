@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,6 +27,10 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import bhouse.jtenun.adapters.RecyclerViewDataAdapter;
+import bhouse.jtenun.models.SectionDataModel;
+import bhouse.jtenun.models.SingleItemModel;
+
 public class MainActivity extends FragmentActivity {
     //Defining Variables
     private static ViewPager mPager;
@@ -37,6 +44,11 @@ public class MainActivity extends FragmentActivity {
     private DrawerLayout drawerLayout;
     SearchView searchView;
 
+    ArrayList<SectionDataModel> allSampleData;
+
+
+    private TabLayout tabLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -45,12 +57,50 @@ public class MainActivity extends FragmentActivity {
     setContentView(R.layout.activity_main);
     init();
 
+        allSampleData = new ArrayList<SectionDataModel>();
+        createDummyData();
+
+        RecyclerView my_recycler_view = (RecyclerView) findViewById(R.id.my_recycler_view);
+
+        my_recycler_view.setHasFixedSize(true);
+
+        RecyclerViewDataAdapter adapter = new RecyclerViewDataAdapter(this, allSampleData);
+
+        my_recycler_view.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        my_recycler_view.setAdapter(adapter);
+
     // Initializing Toolbar and setting it as the actionbar
     toolbar = (Toolbar) findViewById(R.id.toolbar);
 //       setSupportActionBar(toolbar);
 
+//        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        //       tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
+        //       tabLayout.addTab(tabLayout.newTab().setText("Home"));
+        //      tabLayout.addTab(tabLayout.newTab().setText("Profile"));
+        //     tabLayout.addTab(tabLayout.newTab().setText("Settings"));
+        //    tabLayout.addTab(tabLayout.newTab().setText("More"));
+        //   tabLayout.addTab(tabLayout.newTab().setText("About"));
+        //   tabLayout.addTab(tabLayout.newTab().setText("Help"));
+        //   tabLayout.addTab(tabLayout.newTab().setText("Friends"));
 
+//        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+///            public void onTabSelected(TabLayout.Tab tab) {
+//                tab.getPosition();
+//                tab.getText();
+//            }
 
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+
+//            }
+
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+
+//            }
+//        });
 
     //Initializing NavigationView
     navigationView = (NavigationView) findViewById(R.id.navigation_view);
@@ -100,6 +150,12 @@ public class MainActivity extends FragmentActivity {
                     return true;
 
                 // For rest of the options we just show a toast on click
+
+                case R.id.daftarTenun:
+                    navigationView.getMenu().clear();
+                    navigationView.inflateMenu(R.menu.sub_menu_daftar_tenun);
+                    return true;
+
 
                 case R.id.kategori:
                     Toast.makeText(getApplicationContext(), "Kategori Selected", Toast.LENGTH_SHORT).show();
@@ -163,6 +219,73 @@ public class MainActivity extends FragmentActivity {
                     navigationView.inflateMenu(R.menu.drawer);
                     return true;
 
+                //daftar Tenun
+                case R.id.sasirangan:
+                    Toast.makeText(getApplicationContext(), "Sasirangan", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun);
+                    return true;
+                case R.id.ulos:
+                    Toast.makeText(getApplicationContext(), "ulos", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun1 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun1);
+                    //drawerLayout.closeDrawers();
+                    return true;
+                case R.id.sarungbugis:
+                    Toast.makeText(getApplicationContext(), "sarungbugis", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun2 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun2);
+                    return true;
+                case R.id.lurik:
+                    Toast.makeText(getApplicationContext(), "lurik", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun3 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun3);
+                    return true;
+                case R.id.songketlombok:
+                    Toast.makeText(getApplicationContext(), "songketlombok", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun4 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun4);
+                    return true;
+                case R.id.tapis:
+                    Toast.makeText(getApplicationContext(), "tapis", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun5 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun5);
+                    return true;
+                case R.id.gringsing:
+                    Toast.makeText(getApplicationContext(), "gringsing", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun6 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun6);
+                    return true;
+                case R.id.tenundayak:
+                    Toast.makeText(getApplicationContext(), "tenundayak", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun7 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun7);
+                    return true;
+                case R.id.besurek:
+                    Toast.makeText(getApplicationContext(), "besurek", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun8 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun8);
+                    return true;
+                case R.id.songketpalembang:
+                    Toast.makeText(getApplicationContext(), "songketpalembang", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun9 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun9);
+                    return true;
+                case R.id.tenunulapdoyo:
+                    Toast.makeText(getApplicationContext(), "tenunulapdoyo", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun10 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun10);
+                    return true;
+                case R.id.poleng:
+                    Toast.makeText(getApplicationContext(), "poleng", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun11 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun11);
+                    return true;
+                case R.id.jumputan:
+                    Toast.makeText(getApplicationContext(), "jumputan", Toast.LENGTH_SHORT).show();
+                    Intent jenis_tenun12 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                    startActivity(jenis_tenun12);
+                    return true;
                 default:
                     Toast.makeText(getApplicationContext(),"Somethings Wrong",Toast.LENGTH_SHORT).show();
                     drawerLayout.closeDrawers();
@@ -261,6 +384,33 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
+    }
+
+    public void createDummyData() {
+        for (int i = 1; i <= 3; i++) {
+
+            SectionDataModel dm = new SectionDataModel();
+
+            if (i == 1) {
+                dm.setHeaderTitle("Motif Terbaru");
+            }
+            if (i == 2) {
+                dm.setHeaderTitle("Motif Terlaris");
+            }
+            if (i == 3) {
+                dm.setHeaderTitle("Daftar Tenun");
+            }
+
+            ArrayList<SingleItemModel> singleItem = new ArrayList<SingleItemModel>();
+            for (int j = 0; j <= 5; j++) {
+                singleItem.add(new SingleItemModel("Item " + j, "URL " + j));
+            }
+
+            dm.setAllItemsInSection(singleItem);
+
+            allSampleData.add(dm);
+
+        }
     }
 
     @Override

@@ -19,7 +19,11 @@
         <!--android:checked="false"-->
         <!--android:icon="@drawable/ic_error_black"-->
         <!--android:title="@string/spam_string" />-->
-
+        <item
+            android:id="@+id/daftarTenun"
+            android:checked="false"
+            android:icon="@drawable/kategori"
+            android:title="@string/daftartenun" />
 
         <item
             android:id="@+id/kategori"

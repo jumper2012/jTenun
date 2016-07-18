@@ -32,7 +32,7 @@
             android:id="@+id/img_slideshow_layout"
             android:layout_width="fill_parent"
             android:layout_height="136dp"
-            android:layout_below="@+id/img_slide_header_layout"
+            android:layout_below="@+id/indicator_layout"
             android:layout_marginTop="10dp"
             android:background="@drawable/img_border"
             android:layout_marginLeft="7dp"
@@ -51,24 +51,49 @@
             android:layout_marginTop="7dp"
             android:layout_marginBottom="7dp" />
         </RelativeLayout>
-        <com.viewpagerindicator.CirclePageIndicator
-            android:id="@+id/indicator"
+
+        <RelativeLayout
+            android:id="@+id/indicator_layout"
             android:layout_width="fill_parent"
-            android:layout_height="25dp"
-            android:gravity="bottom"
-            android:padding="10dip"
-            app:centered="true"
-            app:fillColor="#ff0099"
-            app:pageColor="#FF0000"
-            app:snap="false"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            android:layout_weight="0.41"
-            android:layout_alignStart="@+id/pager"
-            android:layout_below="@+id/pager">
-        </com.viewpagerindicator.CirclePageIndicator>
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/coor_Layout"
+            android:layout_gravity="top">
+
+            <com.viewpagerindicator.CirclePageIndicator
+                android:id="@+id/indicator"
+                android:layout_width="fill_parent"
+                android:layout_height="25dp"
+                android:gravity="bottom"
+                android:padding="10dip"
+                app:centered="true"
+                app:fillColor="#ff0099"
+                app:pageColor="#FF0000"
+                app:snap="false"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_weight="0.41"
+                android:layout_alignStart="@+id/pager"
+                android:layout_below="@+id/pager"></com.viewpagerindicator.CirclePageIndicator>
+        </RelativeLayout>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="8dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none" />
 
     </LinearLayout>
+
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
@@ -78,5 +103,6 @@
         app:headerLayout="@layout/header"
         app:menu="@menu/drawer"
         />
+
 
 </android.support.v4.widget.DrawerLayout>

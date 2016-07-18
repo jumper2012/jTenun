@@ -5,7 +5,7 @@
 
   <application
     android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
+      android:icon="@mipmap/logosatunol"
     android:label="@string/app_name"
     android:supportsRtl="true"
     android:largeHeap="true"
@@ -35,7 +35,11 @@
       android:screenOrientation="portrait">
     </activity>
 
-    <activity
+      <activity
+          android:name="bhouse.jtenun.JenisTenunActivity"
+          android:screenOrientation="portrait"></activity>
+
+      <activity
         android:name="bhouse.jtenun.DetailImageActivity"
         android:screenOrientation="portrait">
     </activity>

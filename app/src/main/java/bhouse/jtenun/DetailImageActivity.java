@@ -65,9 +65,14 @@ public class DetailImageActivity extends Activity
 
 
         mTitle = (TextView) findViewById(R.id.textView);
-        mTitle.setText(finalvariableValue);
+        //mTitle.setText(finalvariableValue);
 
         imageView1.setImageResource(getResources().getIdentifier(finalvariableValue, "drawable", getPackageName()));
+
+        //Bitmap b = ((BitmapDrawable)imageView1.getBackground()).getBitmap();
+        //int w = b.getWidth();
+        //int h = b.getHeight();
+        //mTitle.setText("height : "+h+"| width : "+w );
 
         imageView1.setOnTouchListener(new View.OnTouchListener() {
 
@@ -75,6 +80,10 @@ public class DetailImageActivity extends Activity
             public boolean onTouch(View v, MotionEvent event) {
                 // TODO Auto-generated method stub
                 ImageView view = (ImageView) v;
+                ImageView view_dummy = null;
+                Drawable imgDrawabletest = ((ImageView) imageView1).getDrawable();
+                Bitmap bitmaptest = ((BitmapDrawable) imgDrawabletest).getBitmap();
+                if (bitmaptest.getWidth() < 200 && bitmaptest.getHeight() < 100)
                 dumpEvent(event);
 
                 // Handle touch events here...
@@ -130,14 +139,14 @@ public class DetailImageActivity extends Activity
                             //  + String.valueOf(bitmap.getHeight()));
 
                             //Limit x, y range within bitmap
-                            if(px < 0){
-                                px = 0;
+                            if (px < 1000) {
+                                px = 1000;
                             }else if(px > bitmap.getWidth()-1){
                                 px = bitmap.getWidth()-1;
                             }
 
-                            if(py < 0){
-                                py = 0;
+                            if (py < 1000) {
+                                py = 1000;
                             }else if(py > bitmap.getHeight()-1){
                                 py = bitmap.getHeight()-1;
                             }
@@ -174,11 +183,12 @@ public class DetailImageActivity extends Activity
                         }
                         break;
                 }
-
-                view.setImageMatrix(matrix);
-
-
-                return true;
+                view_dummy.setImageMatrix(matrix);
+                if (view_dummy.getWidth() > 150) ;
+                {
+                    view.setImageMatrix(matrix);
+                    return true;
+                }
             }
         });
     }

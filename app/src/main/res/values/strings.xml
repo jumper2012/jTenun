@@ -23,4 +23,19 @@
   <string name="navigation_drawer_open">Open navigation drawer</string>
   <string name="navigation_drawer_close">Close navigation drawer</string>
   <string name="popuptext">Selamat datang di aplikasi mobile jTenun</string>
+  <string name="daftartenun">Daftar Tenun</string>
+  <!--<daftar tenun>-->
+  <string name="sasirangan_string">Sasirangan</string>
+  <string name="ulos_string">Ulos</string>
+  <string name="sarungbugis_string">Sarang Bugis</string>
+  <string name="lurik_string">Lurik</string>
+  <string name="songketlombok_string">Songket Lombok</string>
+  <string name="tapis_string">Tapis</string>
+  <string name="gringsing_string">Gringsing</string>
+  <string name="tenundayak_string">Tenun Dayak</string>
+  <string name="besurek_string">Besurek</string>
+  <string name="songketpalembang_string">Songket Palembang</string>
+  <string name="tenunulapdoyo_string">Tenun Ulap Doyo</string>
+  <string name="poleng_string">Poleng</string>
+  <string name="jumputan_string">Jumputan</string>
 </resources>

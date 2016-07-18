@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/back_to_main"
+            android:icon="@drawable/ic_action_navigation_arrow_back"
+            android:title="Go Back" />
+        <item
+            android:id="@+id/sasirangan"
+            android:checked="false"
+            android:icon="@drawable/ic_bullet"
+            android:title="@string/sasirangan_string" />
+
+        <item
+            android:id="@+id/ulos"
+            android:checked="false"
+            android:icon="@drawable/ic_square"
+            android:title="@string/ulos_string" />
+        <item
+            android:id="@+id/sarungbugis"
+            android:checked="false"
+            android:icon="@drawable/ic_bullet"
+            android:title="@string/sarungbugis_string" />
+
+
+        <item
+            android:id="@+id/lurik"
+            android:checked="false"
+            android:icon="@drawable/ic_square"
+            android:title="@string/lurik_string"></item>
+
+        <item
+            android:id="@+id/songketlombok"
+            android:checked="false"
+            android:icon="@drawable/ic_bullet"
+            android:title="@string/songketlombok_string"></item>
+
+        <item
+            android:id="@+id/tapis"
+            android:checked="false"
+            android:icon="@drawable/ic_square"
+            android:title="@string/tapis_string"></item>
+
+
+        <item
+            android:id="@+id/tenundayak"
+            android:checked="false"
+            android:icon="@drawable/ic_bullet"
+            android:title="@string/tenundayak_string"></item>
+
+        <item
+            android:id="@+id/besurek"
+            android:checked="false"
+            android:icon="@drawable/ic_square"
+            android:title="@string/besurek_string"></item>
+        <item
+            android:id="@+id/songketpalembang"
+            android:checked="false"
+            android:icon="@drawable/ic_bullet"
+            android:title="@string/songketpalembang_string"></item>
+        <item
+            android:id="@+id/tenunulapdoyo"
+            android:checked="false"
+            android:icon="@drawable/ic_square"
+            android:title="@string/tenunulapdoyo_string"></item>
+        <item
+            android:id="@+id/poleng"
+            android:checked="false"
+            android:icon="@drawable/ic_bullet"
+            android:title="@string/poleng_string"></item>
+        <item
+            android:id="@+id/jumputan"
+            android:checked="false"
+            android:icon="@drawable/ic_square"
+            android:title="@string/jumputan_string"></item>
+        <item
+            android:id="@+id/gringsing"
+            android:checked="false"
+            android:icon="@drawable/ic_bullet"
+            android:title="@string/gringsing_string"></item>
+
+    </group>
+</menu>
