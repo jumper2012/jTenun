@@ -31,6 +31,7 @@ import bhouse.jtenun.adapters.RecyclerViewDataAdapter;
 import bhouse.jtenun.models.SectionDataModel;
 import bhouse.jtenun.models.SingleItemModel;
 
+///baklabalbslabskabskabsak
 public class MainActivity extends FragmentActivity {
     //Defining Variables
     private static ViewPager mPager;
