@@ -183,6 +183,8 @@ public class DetailImageActivity extends Activity
                         }
                         break;
                 }
+
+
                 view_dummy.setImageMatrix(matrix);
                 if (view_dummy.getWidth() > 150) ;
                 {
