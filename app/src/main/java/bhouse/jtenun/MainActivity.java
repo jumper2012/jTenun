@@ -43,6 +43,7 @@ public class MainActivity extends FragmentActivity {
     SearchView searchView;
     private PopupWindow pw;
     Button Close;
+    Button Create;
     private GridLayoutManager lLayout;
 
     ArrayList<SectionDataModel> allSampleData;
@@ -54,8 +55,10 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
     //requestWindowFeature(Window.FEATURE_NO_TITLE);
     setContentView(R.layout.activity_main);
+
 
 
         List<ItemObject> rowListItem = getAllItemList();
@@ -68,6 +71,14 @@ public class MainActivity extends FragmentActivity {
         RecyclerViewAdapter rcAdapter = new RecyclerViewAdapter(MainActivity.this, rowListItem);
         rView.setAdapter(rcAdapter);
 
+//        Create = (Button) findViewById(R.id.create_popup);
+//        Create.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//// TODO Auto-generated method stub
+//                showPopup();
+//            }
+//        });
     // Initializing Toolbar and setting it as the actionbar
     toolbar = (Toolbar) findViewById(R.id.toolbar);
 //       setSupportActionBar(toolbar);
@@ -393,8 +404,10 @@ public class MainActivity extends FragmentActivity {
             LayoutInflater inflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View layout = inflater.inflate(R.layout.popup,
                     (ViewGroup) findViewById(R.id.popup_1));
-            pw = new PopupWindow(layout, 300, 370, true);
+            pw = new PopupWindow(layout, 800,
+                    700, true);
             pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
+
             Close = (Button) layout.findViewById(R.id.close_popup);
             Close.setOnClickListener(cancel_button);
         } catch (Exception e) {
