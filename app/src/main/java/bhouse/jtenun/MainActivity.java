@@ -1,8 +1,8 @@
 package bhouse.jtenun;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
@@ -11,25 +11,25 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.viewpagerindicator.CirclePageIndicator;
-
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.List;
 
-import bhouse.jtenun.adapters.RecyclerViewDataAdapter;
 import bhouse.jtenun.models.SectionDataModel;
-import bhouse.jtenun.models.SingleItemModel;
 
 ///baklabalbslabskabskabsak
 public class MainActivity extends FragmentActivity {
@@ -37,13 +37,13 @@ public class MainActivity extends FragmentActivity {
     private static ViewPager mPager;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
-    private static final Integer[] IMAGES= {R.drawable.bintangmaratur,R.drawable.sibolang,R.drawable.sadum,R.drawable.ragihotangi};
-    private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
-
-    private Toolbar toolbar;
+     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     SearchView searchView;
+    private PopupWindow pw;
+    Button Close;
+    private GridLayoutManager lLayout;
 
     ArrayList<SectionDataModel> allSampleData;
 
@@ -56,20 +56,17 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
     //requestWindowFeature(Window.FEATURE_NO_TITLE);
     setContentView(R.layout.activity_main);
-    init();
 
-        allSampleData = new ArrayList<SectionDataModel>();
-        createDummyData();
 
-        RecyclerView my_recycler_view = (RecyclerView) findViewById(R.id.my_recycler_view);
+        List<ItemObject> rowListItem = getAllItemList();
+        lLayout = new GridLayoutManager(MainActivity.this, 3);
 
-        my_recycler_view.setHasFixedSize(true);
+        RecyclerView rView = (RecyclerView)findViewById(R.id.recycler_view);
+        rView.setHasFixedSize(true);
+        rView.setLayoutManager(lLayout);
 
-        RecyclerViewDataAdapter adapter = new RecyclerViewDataAdapter(this, allSampleData);
-
-        my_recycler_view.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-
-        my_recycler_view.setAdapter(adapter);
+        RecyclerViewAdapter rcAdapter = new RecyclerViewAdapter(MainActivity.this, rowListItem);
+        rView.setAdapter(rcAdapter);
 
     // Initializing Toolbar and setting it as the actionbar
     toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -320,98 +317,29 @@ public class MainActivity extends FragmentActivity {
     //calling sync state is necessay or else your hamburger icon wont show up
     actionBarDrawerToggle.syncState();
 }
-    private void init() {
 
 
-        for(int i=0;i<IMAGES.length;i++)
-            ImagesArray.add(IMAGES[i]);
+    private List<ItemObject> getAllItemList(){
 
-        mPager = (ViewPager) findViewById(R.id.pager);
+        List<ItemObject> allItems = new ArrayList<ItemObject>();
+        allItems.add(new ItemObject("A", R.drawable.one));
+        allItems.add(new ItemObject("B", R.drawable.two));
+        allItems.add(new ItemObject("C", R.drawable.three));
+        allItems.add(new ItemObject("D", R.drawable.four));
+        allItems.add(new ItemObject("E", R.drawable.five));
+        allItems.add(new ItemObject("F", R.drawable.six));
+        allItems.add(new ItemObject("G", R.drawable.seven));
+        allItems.add(new ItemObject("H", R.drawable.eight));
+        allItems.add(new ItemObject("I", R.drawable.one));
+        allItems.add(new ItemObject("J", R.drawable.two));
+        allItems.add(new ItemObject("K", R.drawable.three));
+        allItems.add(new ItemObject("L", R.drawable.four));
+        allItems.add(new ItemObject("M", R.drawable.five));
+        allItems.add(new ItemObject("N", R.drawable.six));
+        allItems.add(new ItemObject("O", R.drawable.seven));
+        allItems.add(new ItemObject("P", R.drawable.eight));
 
-
-        mPager.setAdapter(new SlidingImage_Adapter(MainActivity.this, ImagesArray));
-
-
-        CirclePageIndicator indicator = (CirclePageIndicator)
-                findViewById(R.id.indicator);
-
-        indicator.setViewPager(mPager);
-
-        final float density = getResources().getDisplayMetrics().density;
-
-        indicator.setRadius(5 * density);
-
-
-
-        NUM_PAGES =IMAGES.length;
-
-
-
-        // Auto start of viewpager
-        final Handler handler = new Handler();
-        final Runnable Update = new Runnable() {
-            public void run() {
-                if (currentPage == NUM_PAGES) {
-                    currentPage = 0;
-                }
-                mPager.setCurrentItem(currentPage++, true);
-            }
-        };
-        Timer swipeTimer = new Timer();
-        swipeTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                handler.post(Update);
-            }
-        }, 3000, 3000);
-
-        // Pager listener over indicator
-        indicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-            @Override
-            public void onPageSelected(int position) {
-                currentPage = position;
-
-            }
-
-            @Override
-            public void onPageScrolled(int pos, float arg1, int arg2) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int pos) {
-
-            }
-        });
-
-    }
-
-    public void createDummyData() {
-        for (int i = 1; i <= 3; i++) {
-
-            SectionDataModel dm = new SectionDataModel();
-
-            if (i == 1) {
-                dm.setHeaderTitle("Motif Terbaru");
-            }
-            if (i == 2) {
-                dm.setHeaderTitle("Motif Terlaris");
-            }
-            if (i == 3) {
-                dm.setHeaderTitle("Daftar Tenun");
-            }
-
-            ArrayList<SingleItemModel> singleItem = new ArrayList<SingleItemModel>();
-            for (int j = 0; j <= 5; j++) {
-                singleItem.add(new SingleItemModel("Item " + j, "URL " + j));
-            }
-
-            dm.setAllItemsInSection(singleItem);
-
-            allSampleData.add(dm);
-
-        }
+        return allItems;
     }
 
     @Override
@@ -458,4 +386,26 @@ public class MainActivity extends FragmentActivity {
             super.onBackPressed();
         }
     }
+
+    private void showPopup() {
+        try {
+// We need to get the instance of the LayoutInflater
+            LayoutInflater inflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View layout = inflater.inflate(R.layout.popup,
+                    (ViewGroup) findViewById(R.id.popup_1));
+            pw = new PopupWindow(layout, 300, 370, true);
+            pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
+            Close = (Button) layout.findViewById(R.id.close_popup);
+            Close.setOnClickListener(cancel_button);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private View.OnClickListener cancel_button = new View.OnClickListener() {
+        public void onClick(View v) {
+            pw.dismiss();
+        }
+    };
+
 }
