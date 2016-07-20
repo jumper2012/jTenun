@@ -296,19 +296,19 @@ public class MainActivity extends FragmentActivity {
         allItems.add(new ItemObject("A", R.drawable.one));
         allItems.add(new ItemObject("B", R.drawable.two));
         allItems.add(new ItemObject("C", R.drawable.three));
-        allItems.add(new ItemObject("D", R.drawable.four));
+        allItems.add(new ItemObject("D", R.drawable.one));
         allItems.add(new ItemObject("E", R.drawable.five));
         allItems.add(new ItemObject("F", R.drawable.six));
         allItems.add(new ItemObject("G", R.drawable.seven));
-        allItems.add(new ItemObject("H", R.drawable.eight));
+        allItems.add(new ItemObject("H", R.drawable.two));
         allItems.add(new ItemObject("I", R.drawable.one));
         allItems.add(new ItemObject("J", R.drawable.two));
         allItems.add(new ItemObject("K", R.drawable.three));
-        allItems.add(new ItemObject("L", R.drawable.four));
+        allItems.add(new ItemObject("L", R.drawable.one));
         allItems.add(new ItemObject("M", R.drawable.five));
         allItems.add(new ItemObject("N", R.drawable.six));
         allItems.add(new ItemObject("O", R.drawable.seven));
-        allItems.add(new ItemObject("P", R.drawable.eight));
+        allItems.add(new ItemObject("P", R.drawable.three));
 
         return allItems;
     }
