@@ -73,35 +73,6 @@ public class MainActivity extends FragmentActivity {
 
     // Initializing Toolbar and setting it as the actionbar
     toolbar = (Toolbar) findViewById(R.id.toolbar);
-//       setSupportActionBar(toolbar);
-
-//        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        //       tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
-        //       tabLayout.addTab(tabLayout.newTab().setText("Home"));
-        //      tabLayout.addTab(tabLayout.newTab().setText("Profile"));
-        //     tabLayout.addTab(tabLayout.newTab().setText("Settings"));
-        //    tabLayout.addTab(tabLayout.newTab().setText("More"));
-        //   tabLayout.addTab(tabLayout.newTab().setText("About"));
-        //   tabLayout.addTab(tabLayout.newTab().setText("Help"));
-        //   tabLayout.addTab(tabLayout.newTab().setText("Friends"));
-
-//        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-///            public void onTabSelected(TabLayout.Tab tab) {
-//                tab.getPosition();
-//                tab.getText();
-//            }
-
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-
-//            }
-
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-
-//            }
-//        });
 
     //Initializing NavigationView
     navigationView = (NavigationView) findViewById(R.id.navigation_view);
@@ -164,17 +135,6 @@ public class MainActivity extends FragmentActivity {
                     navigationView.inflateMenu(R.menu.sub_menu_drawer);
                     return true;
 
-                case R.id.filosofi:
-                    Toast.makeText(getApplicationContext(),"Filosofi Selected",Toast.LENGTH_SHORT).show();
-                    FilosofiFragment flsfifragment = new FilosofiFragment();
-                    android.support.v4.app.FragmentTransaction fragmentTransactionfilosofi = getSupportFragmentManager().beginTransaction();
-                    fragmentTransactionfilosofi.replace(R.id.frame,flsfifragment);
-                    fragmentTransactionfilosofi.commit();
-                    drawerLayout.closeDrawers();
-                    return true;
-//                    case R.id.spam:
-//                        Toast.makeText(getApplicationContext(),"Spam Selected",Toast.LENGTH_SHORT).show();
-//                        return true;
                 case R.id.daerah:
                     Toast.makeText(getApplicationContext(),"Daerah Selected",Toast.LENGTH_SHORT).show();
                     DaerahFragment drhfragment = new DaerahFragment();

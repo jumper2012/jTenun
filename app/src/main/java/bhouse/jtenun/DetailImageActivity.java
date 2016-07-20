@@ -185,12 +185,12 @@ public class DetailImageActivity extends Activity
                 }
 
 
-                view_dummy.setImageMatrix(matrix);
-                if (view_dummy.getWidth() > 150) ;
-                {
+//                view_dummy.setImageMatrix(matrix);
+//                if (view_dummy.getWidth() > 150) ;
+//                {
                     view.setImageMatrix(matrix);
                     return true;
-                }
+//                }
             }
         });
     }
