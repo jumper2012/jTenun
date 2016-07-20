@@ -27,70 +27,32 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="25dp">
 
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    tools:context=".MainActivity">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="vertical"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentStart="true" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
         </FrameLayout>
-        <RelativeLayout
-            android:id="@+id/img_slideshow_layout"
-            android:layout_width="fill_parent"
-            android:layout_height="136dp"
-            android:layout_below="@+id/indicator_layout"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/img_border"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            android:layout_gravity="top">
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pager"
-            android:layout_width="fill_parent"
-            android:layout_height="135dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            android:scaleType="fitCenter"
-        android:layout_gravity="center"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="7dp"
-            android:layout_marginBottom="7dp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/indicator_layout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/coor_Layout"
-            android:layout_gravity="top">
-
-            <com.viewpagerindicator.CirclePageIndicator
-                android:id="@+id/indicator"
-                android:layout_width="fill_parent"
-                android:layout_height="25dp"
-                android:gravity="bottom"
-                android:padding="10dip"
-                app:centered="true"
-                app:fillColor="#ff0099"
-                app:pageColor="#FF0000"
-                app:snap="false"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="7dp"
-                android:layout_weight="0.41"
-                android:layout_alignStart="@+id/pager"
-                android:layout_below="@+id/pager"></com.viewpagerindicator.CirclePageIndicator>
-        </RelativeLayout>
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:elevation="8dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/my_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none" />
 
     </LinearLayout>
 
