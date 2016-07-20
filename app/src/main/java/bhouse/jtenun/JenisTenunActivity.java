@@ -58,7 +58,7 @@ public class JenisTenunActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
+        inflater.inflate(R.menu.show_grid, menu);
         this.menu = menu;
         return true;
     }

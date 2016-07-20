@@ -143,8 +143,7 @@ public class DetailActivity extends Activity {
                 Toast.makeText(getApplicationContext(),
                         "Position :" + potongan[itemPosition].nama_potongan_jenis_ulos, Toast.LENGTH_LONG)
                         .show();
-                Intent detailmotifactivity = new Intent(DetailActivity.this, MainActivity.class);
-                detailmotifactivity.putExtra(ID_MOTIF, potongan[itemPosition].id_potongan);
+                Intent detailmotifactivity = new Intent(DetailActivity.this, GenerateMotifActivity.class);
                 startActivity(detailmotifactivity);
             }
         });
