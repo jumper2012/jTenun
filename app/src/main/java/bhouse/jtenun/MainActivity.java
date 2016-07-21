@@ -116,15 +116,15 @@ public class MainActivity extends FragmentActivity {
 
 
 
-//        List<ItemObject> rowListItem = getAllItemList();
-//        lLayout = new GridLayoutManager(MainActivity.this, 3);
-//
-//        RecyclerView rView = (RecyclerView)findViewById(R.id.recycler_view);
-//        rView.setHasFixedSize(true);
-//        rView.setLayoutManager(lLayout);
-//
-//        RecyclerViewAdapter rcAdapter = new RecyclerViewAdapter(MainActivity.this, rowListItem);
-//        rView.setAdapter(rcAdapter);
+        List<ItemObject> rowListItem = getAllItemList();
+        lLayout = new GridLayoutManager(MainActivity.this, 3);
+
+        RecyclerView rView = (RecyclerView)findViewById(R.id.recycler_view);
+        rView.setHasFixedSize(true);
+        rView.setLayoutManager(lLayout);
+
+        RecyclerViewAdapter rcAdapter = new RecyclerViewAdapter(MainActivity.this, rowListItem);
+        rView.setAdapter(rcAdapter);
 
 //        Create = (Button) findViewById(R.id.create_popup);
 //        Create.setOnClickListener(new View.OnClickListener() {
