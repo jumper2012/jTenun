@@ -10,16 +10,6 @@
             android:title="@string/beranda_string" />
 
         <item
-            android:id="@+id/filosofi"
-            android:checked="false"
-            android:icon="@drawable/ic_star_black"
-            android:title="@string/Filosofi_string" />
-        <!--<item-->
-        <!--android:id="@+id/spam"-->
-        <!--android:checked="false"-->
-        <!--android:icon="@drawable/ic_error_black"-->
-        <!--android:title="@string/spam_string" />-->
-        <item
             android:id="@+id/daftarTenun"
             android:checked="false"
             android:icon="@drawable/kategori"
