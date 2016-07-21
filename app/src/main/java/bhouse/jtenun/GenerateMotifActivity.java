@@ -1,9 +1,11 @@
 package bhouse.jtenun;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 
 public class GenerateMotifActivity extends Activity {
     private Menu menu;
@@ -22,4 +24,16 @@ public class GenerateMotifActivity extends Activity {
         this.menu = menu;
         return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_save) {
+            Dialog rankDialog = new Dialog(GenerateMotifActivity.this, R.style.FullHeightDialog);
+            rankDialog.setContentView(R.layout.rating_dialog);
+            rankDialog.show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

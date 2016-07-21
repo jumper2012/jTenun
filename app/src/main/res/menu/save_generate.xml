@@ -4,7 +4,7 @@
     android:background="@color/PrimaryColor">
 
     <item
-        android:id="@+id/action_toggle"
+        android:id="@+id/action_save"
         android:icon="@drawable/ic_save_black_48dp"
         android:showAsAction="always"
         android:orderInCategory="100"
