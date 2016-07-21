@@ -2,74 +2,95 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\jars\classes.jar"
+        jar="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
-        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\classes-22f014483a08f4baa0ffe796cdba62fdb91b3b09.jar" />
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\classes-ba3b3cc84dea144703ee927af8fa911b86865908.jar" />
     </item>
     <item
-        jar="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-ce52f2bf16417a6cb402beef17f0f3694848da36.jar" />
-    </item>
-    <item
-        jar="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\exploded-aar\com.mcxiaoke.viewpagerindicator\library\2.4.1\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a09ed9344035830949d3501230e0a85ebb4708f7">
-        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\classes-f3b2f588a9aa57fe84d0170cc2ba130dcb0666a4.jar" />
-    </item>
-    <item
-        jar="C:\Users\JERRY\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.0\7ff0e000d1e27e356567f56c92af3b8ab912636f\picasso-2.5.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="7ff0e000d1e27e356567f56c92af3b8ab912636f">
-        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\picasso-2.5.0-aca0ac51b48a1fe6982924f862ffe6b019570a94.jar" />
-    </item>
-    <item
-        jar="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\classes-b140714292e190c3102f1d516a5db8ba3f0a3035.jar" />
-    </item>
-    <item
-        jar="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
-        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\classes-b79abb2f3b11469fe06e71a619b297c9fd7cba8f.jar" />
-    </item>
-    <item
-        jar="C:\Users\JERRY\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-b4fff2a5a83a62dbe2f1f3508da29c4305202bab.jar" />
-    </item>
-    <item
-        jar="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1821601ddbec5ff125653097812823388700af74">
-        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\classes-4075b3fbc1d80768d3d1bf9fa3ee92f570a7ab16.jar" />
-    </item>
-    <item
-        jar="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\exploded-aar\com.android.support\palette-v7\21.0.0\jars\classes.jar"
+        jar="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\exploded-aar\com.android.support\palette-v7\21.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="b65c2fede61220ed2b6a063f11ca13160910089e">
-        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\classes-511c77c95d7d2cb110ba87568feba8d507c819b0.jar" />
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\classes-427ee194c63352ee106a198b21d21fd08c1ad43c.jar" />
     </item>
     <item
-        jar="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jar="C:\Users\Sursev\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\gson-2.2.4-665ac73a2172ca57a15589bd5f7dde1ff13286c9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sursev\AppData\Local\Android\sdk2\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-1322a05531f7a1066772989924087954f2827069.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sursev\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\glide-3.7.0-ba502d2ada282ff6c988f7b68d2a5526586e798f.jar" />
+    </item>
+    <item
+        jar="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\classes-23a9dba4a80c0d9fb31d8a1f9df443d122dee9bd.jar" />
+    </item>
+    <item
+        jar="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\classes-add4e04327078626867f3f8918240b232966df24.jar" />
+    </item>
+    <item
+        jar="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\classes-65a6431ea206b56b38363a1bd0ac119235567cb8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sursev\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.0\7ff0e000d1e27e356567f56c92af3b8ab912636f\picasso-2.5.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7ff0e000d1e27e356567f56c92af3b8ab912636f">
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\picasso-2.5.0-a226d7daf6b432c7e82a0614636dcdd9dfc9badd.jar" />
+    </item>
+    <item
+        jar="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e0b0c35d02308b270015a74cada4887e2e49b889">
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\classes-b7f65df203380149a53470cb504bfb8641e5c61f.jar" />
+    </item>
+    <item
+        jar="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-d2cd042a69f2b2a70f87532dbbeb79af728ce013.jar" />
+    </item>
+    <item
+        jar="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\classes-f33e53e0951d56aba184ed71e858482b01d77874.jar" />
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\classes-284c66e89077147ffc4529aca82019bbd3e745d3.jar" />
+    </item>
+    <item
+        jar="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\exploded-aar\com.mcxiaoke.viewpagerindicator\library\2.4.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a09ed9344035830949d3501230e0a85ebb4708f7">
+        <dex dex="E:\kuliah\semester 8\KP\project\jTenun\app\build\intermediates\pre-dexed\debug\classes-89e43e7415850e03b84e2b8e2d6a87b1c0980bae.jar" />
     </item>
 
 </items>
