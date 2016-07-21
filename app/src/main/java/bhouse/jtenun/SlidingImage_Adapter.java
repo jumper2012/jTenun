@@ -23,9 +23,6 @@ public class SlidingImage_Adapter extends PagerAdapter {
         this.context = context;
         this.IMAGES=IMAGES;
         inflater = LayoutInflater.from(context);
-
-
-
     }
 
     @Override
