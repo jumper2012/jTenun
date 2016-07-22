@@ -30,6 +30,7 @@ public class GenerateMotifActivity extends Activity {
         int id = item.getItemId();
         if (id == R.id.action_save) {
             Dialog rankDialog = new Dialog(GenerateMotifActivity.this);
+            rankDialog.setTitle("RATING MOTIF INI");
             rankDialog.setContentView(R.layout.rating_dialog);
             rankDialog.show();
         }
