@@ -19,7 +19,4 @@
         <item name="android:background">#5fa3d0</item>
     </style>
 
-    <style name="FullHeightDialog" parent="android:style/Theme.Dialog">
-        <item name="android:windowNoTitle">true</item>
-    </style>
 </resources>

@@ -29,7 +29,7 @@ public class GenerateMotifActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_save) {
-            Dialog rankDialog = new Dialog(GenerateMotifActivity.this, R.style.FullHeightDialog);
+            Dialog rankDialog = new Dialog(GenerateMotifActivity.this);
             rankDialog.setContentView(R.layout.rating_dialog);
             rankDialog.show();
         }

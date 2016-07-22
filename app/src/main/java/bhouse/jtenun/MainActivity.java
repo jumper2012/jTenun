@@ -151,10 +151,10 @@ public class MainActivity extends FragmentActivity {
                                                                          return true;
                                                                      case R.id.war:
                                                                          Toast.makeText(getApplicationContext(), "Warna Selected", Toast.LENGTH_SHORT).show();
-                    navigationView.getMenu().clear();
-                    navigationView.inflateMenu(R.menu.drawer);
-                    drawerLayout.closeDrawers();
-                    return true;
+                                                                         navigationView.getMenu().clear();
+                                                                         navigationView.inflateMenu(R.menu.drawer);
+                                                                         drawerLayout.closeDrawers();
+                                                                         return true;
                                                                      case R.id.pat:
                                                                          Toast.makeText(getApplicationContext(), "Corak Selected", Toast.LENGTH_SHORT).show();
                                                                          navigationView.getMenu().clear();
@@ -246,7 +246,7 @@ public class MainActivity extends FragmentActivity {
 
                                                                  }
                                                              }
-            }
+                                                         }
 
         );
 
@@ -276,7 +276,7 @@ public class MainActivity extends FragmentActivity {
 
         //calling sync state is necessay or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
-        }
+    }
 
 
     private List<ItemObject> getAllItemList() {
@@ -333,11 +333,11 @@ public class MainActivity extends FragmentActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-                return true;
-            }
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
-        }
+    }
 
     @Override
     public void onBackPressed() {
@@ -347,7 +347,7 @@ public class MainActivity extends FragmentActivity {
         } else {
             super.onBackPressed();
         }
-        }
+    }
 
     private void showPopup() {
         try {
