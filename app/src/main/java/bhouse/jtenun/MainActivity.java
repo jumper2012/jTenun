@@ -170,7 +170,6 @@ public class MainActivity extends FragmentActivity {
                                                                                  new int[]{Color.parseColor("#5C6BC0"), Color.parseColor("#3F51B5"), Color.parseColor("#3949AB")},
                                                                                  new int[]{Color.parseColor("#42A5F5"), Color.parseColor("#2196F3"), Color.parseColor("#1E88E5")}
                                                                          };
-
                                                                          new ColorChooserDialog.Builder(MainActivity.this)
                                                                                  .titleSub(R.string.kategori_string)
                                                                                  .preselect(primaryPreselect)

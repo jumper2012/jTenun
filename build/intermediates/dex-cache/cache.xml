@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\exploded-aar\org.xdty.preference\color-picker\0.0.4\jars\classes.jar"
+        jar="C:\Users\JERRY\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.0\7ff0e000d1e27e356567f56c92af3b8ab912636f\picasso-2.5.0.jar"
         jumboMode="false"
         revision="24.0.0"
-        sha1="39be70d494a7a493a1a2321a5c6dd3b638dda559">
-        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\classes-2f4831263ccca8d4c2a89b6664d1b56e1b709154.jar" />
+        sha1="7ff0e000d1e27e356567f56c92af3b8ab912636f">
+        <dex dex="C:\Users\JERRY\AndroidStudioProjects\Jtenun\app\build\intermediates\pre-dexed\debug\picasso-2.5.0-aca0ac51b48a1fe6982924f862ffe6b019570a94.jar" />
     </item>
 
 </items>
