@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/cover_image"
+            android:id="@+id/cover_image_2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitCenter"
@@ -48,7 +48,7 @@
             android:gravity="right">
 
             <ImageButton
-                android:id="@+id/btn_generate"
+                android:id="@+id/btn_generate_more"
                 android:layout_width="@dimen/floating_button_size"
                 android:layout_height="@dimen/floating_button_size"
                 android:layout_marginEnd="10dp"

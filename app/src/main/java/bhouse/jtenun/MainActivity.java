@@ -26,6 +26,8 @@ import android.widget.PopupWindow;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.util.DialogUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +36,10 @@ import bhouse.jtenun.models.SectionDataModel;
 ///baklabalbslabskabskabsak
 public class MainActivity extends FragmentActivity {
     //Defining Variables
+
+    //private final Context context_color;
+
+    private int primaryPreselect;
     private static ViewPager mPager;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
@@ -46,10 +52,15 @@ public class MainActivity extends FragmentActivity {
     Button Create;
     private GridLayoutManager lLayout;
 
+    private Context lappet;
+
     ArrayList<SectionDataModel> allSampleData;
 
 
     private TabLayout tabLayout;
+
+    public MainActivity() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +70,7 @@ public class MainActivity extends FragmentActivity {
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-
+        primaryPreselect = DialogUtils.resolveColor(this, R.attr.colorPrimary);
         List<ItemObject> rowListItem = getAllItemList();
         lLayout = new GridLayoutManager(MainActivity.this, 3);
 
@@ -151,6 +162,21 @@ public class MainActivity extends FragmentActivity {
                                                                          return true;
                                                                      case R.id.war:
                                                                          Toast.makeText(getApplicationContext(), "Warna Selected", Toast.LENGTH_SHORT).show();
+                                                                         /*int[][] subColors = new int[][]{
+                                                                                 new int[]{Color.parseColor("#EF5350"), Color.parseColor("#F44336"), Color.parseColor("#E53935")},
+                                                                                 new int[]{Color.parseColor("#EC407A"), Color.parseColor("#E91E63"), Color.parseColor("#D81B60")},
+                                                                                 new int[]{Color.parseColor("#AB47BC"), Color.parseColor("#9C27B0"), Color.parseColor("#8E24AA")},
+                                                                                 new int[]{Color.parseColor("#7E57C2"), Color.parseColor("#673AB7"), Color.parseColor("#5E35B1")},
+                                                                                 new int[]{Color.parseColor("#5C6BC0"), Color.parseColor("#3F51B5"), Color.parseColor("#3949AB")},
+                                                                                 new int[]{Color.parseColor("#42A5F5"), Color.parseColor("#2196F3"), Color.parseColor("#1E88E5")}
+                                                                         };
+
+                                                                         new ColorChooserDialog.Builder(MainActivity.this)
+                                                                                 .titleSub(R.string.kategori_string)
+                                                                                 .preselect(primaryPreselect)
+                                                                                 .customColors(R.array.custom_colors, subColors)
+                                                                                 .show();*/
+
                                                                          navigationView.getMenu().clear();
                                                                          navigationView.inflateMenu(R.menu.drawer);
                                                                          drawerLayout.closeDrawers();
@@ -371,4 +397,5 @@ public class MainActivity extends FragmentActivity {
             pw.dismiss();
         }
     };
+
 }

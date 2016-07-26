@@ -3,7 +3,9 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="2dip">
+    android:padding="2dip"
+    android:baselineAligned="false"
+    android:gravity="center_vertical|center|center_horizontal">
 
     <RatingBar
         android:layout_marginTop="10dp"
@@ -15,7 +17,7 @@
         android:layout_gravity="center"
         android:numStars="5"
         android:stepSize="1.0"
-        android:rating="2"
+        android:rating="0"
         android:isIndicator="false"
         android:backgroundTint="@color/material_blue_grey_800" />
 
