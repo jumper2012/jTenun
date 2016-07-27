@@ -1,4 +1,4 @@
-package bhouse.jtenun.models;
+package kerjapraktek.jtenun.models;
 
 /**
  * Created by pratap.kesaboyina on 01-12-2015.

@@ -1,4 +1,4 @@
-package bhouse.jtenun.models;
+package kerjapraktek.jtenun.models;
 
 import java.util.ArrayList;
 

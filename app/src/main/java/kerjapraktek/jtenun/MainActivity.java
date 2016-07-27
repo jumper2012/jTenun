@@ -1,4 +1,4 @@
-package bhouse.jtenun;
+package kerjapraktek.jtenun;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,10 +28,10 @@ public class MainActivity extends FragmentActivity {
     SearchView searchView;
     private GridLayoutManager lLayout;
 
-    bhouse.jtenun.adapters.GalleryAdapter mAdapter;
+    kerjapraktek.jtenun.adapters.GalleryAdapter mAdapter;
     RecyclerView mRecyclerView;
 
-    ArrayList<bhouse.jtenun.ImageModel> data = new ArrayList<>();
+    ArrayList<kerjapraktek.jtenun.ImageModel> data = new ArrayList<>();
 
     public static String IMGS[] = {
             "https://lh3.googleusercontent.com/orI_qbPuZNn8O5MHKi4zK5nskmymzdirezMIIIXy3fmThR6CAKls3p3f96n4hpY_1UG1OaM=s85",
@@ -60,7 +60,7 @@ public class MainActivity extends FragmentActivity {
 
         for (int i = 0; i < IMGS.length; i++) {
 //  Adding images & title to POJO class and storing in Array (our data)
-            bhouse.jtenun.ImageModel imageModel = new bhouse.jtenun.ImageModel();
+            kerjapraktek.jtenun.ImageModel imageModel = new kerjapraktek.jtenun.ImageModel();
             imageModel.setName("Image " + i);
             imageModel.setUrl(IMGS[i]);
             data.add(imageModel);
@@ -69,7 +69,7 @@ public class MainActivity extends FragmentActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.list);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         mRecyclerView.setHasFixedSize(true); // Helps improve performance
-        mAdapter = new bhouse.jtenun.adapters.GalleryAdapter(MainActivity.this, data);
+        mAdapter = new kerjapraktek.jtenun.adapters.GalleryAdapter(MainActivity.this, data);
         mRecyclerView.setAdapter(mAdapter);
 
 

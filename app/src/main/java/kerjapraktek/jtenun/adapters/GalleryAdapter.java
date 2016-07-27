@@ -1,4 +1,4 @@
-package bhouse.jtenun.adapters;
+package kerjapraktek.jtenun.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -13,14 +13,14 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import java.util.ArrayList;
 import java.util.List;
 
-import bhouse.jtenun.R;
+import kerjapraktek.jtenun.R;
 
 public class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context context;
-    List<bhouse.jtenun.ImageModel> data = new ArrayList<>();
+    List<kerjapraktek.jtenun.ImageModel> data = new ArrayList<>();
 
-    public GalleryAdapter(Context context, List<bhouse.jtenun.ImageModel> data) {
+    public GalleryAdapter(Context context, List<kerjapraktek.jtenun.ImageModel> data) {
         this.context = context;
         this.data = data;
     }

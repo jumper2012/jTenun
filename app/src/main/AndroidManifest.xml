@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-  package="bhouse.jtenun"
+    package="kerjapraktek.jtenun"
   xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,7 +15,7 @@
     android:theme="@style/AppTheme">
 
     <activity
-        android:name=".SplashActivity"
+        android:name="kerjapraktek.jtenun.SplashActivity"
         android:screenOrientation="portrait"
         android:theme="@android:style/Theme.NoTitleBar">
       <intent-filter>
@@ -27,31 +27,31 @@
 
 
     <activity
-        android:name=".MainActivity"
+        android:name="kerjapraktek.jtenun.MainActivity"
         android:theme="@style/Base.V21.Theme.AppCompat">
 
     </activity>
 
     <activity
-      android:name="bhouse.jtenun.DetailActivity"
+        android:name="kerjapraktek.jtenun.DetailActivity"
       android:screenOrientation="portrait">
     </activity>
 
       <activity
-          android:name="bhouse.jtenun.JenisTenunActivity"
+          android:name="kerjapraktek.jtenun.JenisTenunActivity"
           android:screenOrientation="portrait"></activity>
 
       <activity
-        android:name="bhouse.jtenun.DetailImageActivity"
+          android:name="kerjapraktek.jtenun.DetailImageActivity"
         android:screenOrientation="portrait">
     </activity>
 
       <activity
-          android:name="bhouse.jtenun.GenerateMotifActivity"
+          android:name="kerjapraktek.jtenun.GenerateMotifActivity"
           android:screenOrientation="portrait"></activity>
 
       <activity
-          android:name="bhouse.jtenun.GenerateMotifMoreActivity"
+          android:name="kerjapraktek.jtenun.GenerateMotifMoreActivity"
           android:screenOrientation="portrait"></activity>
 
 

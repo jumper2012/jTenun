@@ -1,4 +1,4 @@
-package bhouse.jtenun.adapters;
+package kerjapraktek.jtenun.adapters;
 
 /**
  * Created by pratap.kesaboyina on 24-12-2014.
@@ -13,10 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import bhouse.jtenun.R;
-import bhouse.jtenun.models.SingleItemModel;
-
 import java.util.ArrayList;
+
+import kerjapraktek.jtenun.R;
+import kerjapraktek.jtenun.models.SingleItemModel;
 
 public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListDataAdapter.SingleItemRowHolder> {
 
