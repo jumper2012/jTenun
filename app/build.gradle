@@ -30,12 +30,10 @@ dependencies {
     compile 'com.afollestad.material-dialogs:core:0.8.6.2'
     compile 'org.xdty.preference:color-picker:0.0.4'
     compile 'com.android.support:design:23.4.0'
-    // RecyclerView
-    compile 'com.android.support:recyclerview-v7:23.1.1'
 
-    // volley
-    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.github.bumptech.glide:glide:3.6.1'
 
-    // Glide
-    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //Untuk Servce
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
 }

@@ -1,63 +1,51 @@
 package bhouse.jtenun;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.PopupWindow;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.util.DialogUtils;
-
 import java.util.ArrayList;
-import java.util.List;
 
-import bhouse.jtenun.models.SectionDataModel;
-
-///baklabalbslabskabskabsak
 public class MainActivity extends FragmentActivity {
-    //Defining Variables
 
-    //private final Context context_color;
-
-    private int primaryPreselect;
-    private static ViewPager mPager;
-    private static int currentPage = 0;
-    private static int NUM_PAGES = 0;
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     SearchView searchView;
-    private PopupWindow pw;
-    Button Close;
-    Button Create;
     private GridLayoutManager lLayout;
 
-    private Context lappet;
+    bhouse.jtenun.adapters.GalleryAdapter mAdapter;
+    RecyclerView mRecyclerView;
 
-    ArrayList<SectionDataModel> allSampleData;
+    ArrayList<bhouse.jtenun.ImageModel> data = new ArrayList<>();
 
+    public static String IMGS[] = {
+            "https://lh3.googleusercontent.com/orI_qbPuZNn8O5MHKi4zK5nskmymzdirezMIIIXy3fmThR6CAKls3p3f96n4hpY_1UG1OaM=s85",
+            "https://lh3.googleusercontent.com/4iBKxtcsSetR_nCfbsIsqde1QpQz3dQ0KBffCGFLf8Hdy2vjDfb0Cg5nazWKDy7ddjBc=s85",
+            "https://lh3.googleusercontent.com/A1oP_mkCP5_rqrTITC0A9btLrgXFvPT1-oJV6JgkIVsg83fZXxq1_wDwMJywU_bOQygdnA=s85",
+            "https://lh3.googleusercontent.com/VdWhSAbku_JTuwqsOaqLD4GCZLsIEkWXZCO7IJheNwsLFctK6EXpGXki962R6ya2N0kE8A=s85",
+            "https://lh3.googleusercontent.com/ADgDRpMDp6t8WFaKlJyBoU_dDQxxouwY2l6G062iOOC5hCWf4iT5WaRat4_KCWVk3HSVGA=s85",
+            "https://lh3.googleusercontent.com/zbwnFlN3q0bMct3YHdcJPYmJg0g7G-aw5ZjACJIeHGv-3TRWsiwyYT3eaH760u7W8uLu2g=s85",
+            "https://lh3.googleusercontent.com/14OgqeQuCVx9DOa17D0bB68i_RG7eD9DM8VoA3DJNuOBZtmlEE4tZunlA9i4kTlEEsEFh4M=s85",
+            "https://lh3.googleusercontent.com/-l-WoLomhcLxR0mMZHb5_NIHp6s4R8cZ012OaVfZsRqtz1GM-GCFqocdweowS5FCuVoJQk4=s85",
+            "https://lh3.googleusercontent.com/4iBKxtcsSetR_nCfbsIsqde1QpQz3dQ0KBffCGFLf8Hdy2vjDfb0Cg5nazWKDy7ddjBc=s85",
+            "https://lh3.googleusercontent.com/zbwnFlN3q0bMct3YHdcJPYmJg0g7G-aw5ZjACJIeHGv-3TRWsiwyYT3eaH760u7W8uLu2g=s85"
+    };
 
-    private TabLayout tabLayout;
 
     public MainActivity() {
     }
@@ -70,25 +58,35 @@ public class MainActivity extends FragmentActivity {
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        primaryPreselect = DialogUtils.resolveColor(this, R.attr.colorPrimary);
-        List<ItemObject> rowListItem = getAllItemList();
-        lLayout = new GridLayoutManager(MainActivity.this, 3);
+        for (int i = 0; i < IMGS.length; i++) {
+//  Adding images & title to POJO class and storing in Array (our data)
+            bhouse.jtenun.ImageModel imageModel = new bhouse.jtenun.ImageModel();
+            imageModel.setName("Image " + i);
+            imageModel.setUrl(IMGS[i]);
+            data.add(imageModel);
+        }
 
-        RecyclerView rView = (RecyclerView) findViewById(R.id.recycler_view);
-        rView.setHasFixedSize(true);
-        rView.setLayoutManager(lLayout);
+        mRecyclerView = (RecyclerView) findViewById(R.id.list);
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        mRecyclerView.setHasFixedSize(true); // Helps improve performance
+        mAdapter = new bhouse.jtenun.adapters.GalleryAdapter(MainActivity.this, data);
+        mRecyclerView.setAdapter(mAdapter);
 
-        RecyclerViewAdapter rcAdapter = new RecyclerViewAdapter(MainActivity.this, rowListItem);
-        rView.setAdapter(rcAdapter);
 
-//        Create = (Button) findViewById(R.id.create_popup);
-//        Create.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//// TODO Auto-generated method stub
-//                showPopup();
-//            }
-//        });
+        //Onclick Listener
+        mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this,
+                new RecyclerItemClickListener.OnItemClickListener() {
+
+                    @Override
+                    public void onItemClick(View view, int position) {
+
+                        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                        intent.putParcelableArrayListExtra("data", data);
+                        intent.putExtra("pos", position);
+                        startActivity(intent);
+
+                    }
+                }));
         // Initializing Toolbar and setting it as the actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -101,7 +99,6 @@ public class MainActivity extends FragmentActivity {
                                                              // This method will trigger on item Click of navigation menu
                                                              @Override
                                                              public boolean onNavigationItemSelected(MenuItem menuItem) {
-
 
                                                                  //Checking if the item is in checked state or not, if not make it in checked state
                                                                  if (menuItem.isChecked())
@@ -162,20 +159,6 @@ public class MainActivity extends FragmentActivity {
                                                                          return true;
                                                                      case R.id.war:
                                                                          Toast.makeText(getApplicationContext(), "Warna Selected", Toast.LENGTH_SHORT).show();
-                                                                         /*int[][] subColors = new int[][]{
-                                                                                 new int[]{Color.parseColor("#EF5350"), Color.parseColor("#F44336"), Color.parseColor("#E53935")},
-                                                                                 new int[]{Color.parseColor("#EC407A"), Color.parseColor("#E91E63"), Color.parseColor("#D81B60")},
-                                                                                 new int[]{Color.parseColor("#AB47BC"), Color.parseColor("#9C27B0"), Color.parseColor("#8E24AA")},
-                                                                                 new int[]{Color.parseColor("#7E57C2"), Color.parseColor("#673AB7"), Color.parseColor("#5E35B1")},
-                                                                                 new int[]{Color.parseColor("#5C6BC0"), Color.parseColor("#3F51B5"), Color.parseColor("#3949AB")},
-                                                                                 new int[]{Color.parseColor("#42A5F5"), Color.parseColor("#2196F3"), Color.parseColor("#1E88E5")}
-                                                                         };
-                                                                         new ColorChooserDialog.Builder(MainActivity.this)
-                                                                                 .titleSub(R.string.kategori_string)
-                                                                                 .preselect(primaryPreselect)
-                                                                                 .customColors(R.array.custom_colors, subColors)
-                                                                                 .show();*/
-
                                                                          navigationView.getMenu().clear();
                                                                          navigationView.inflateMenu(R.menu.drawer);
                                                                          drawerLayout.closeDrawers();
@@ -302,32 +285,6 @@ public class MainActivity extends FragmentActivity {
         //calling sync state is necessay or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
     }
-
-
-    private List<ItemObject> getAllItemList() {
-
-        List<ItemObject> allItems = new ArrayList<ItemObject>();
-        allItems.add(new ItemObject("Motif 1", R.drawable.potonganbintangmaratur0));
-        allItems.add(new ItemObject("Motif 2", R.drawable.potonganbintangmaratur1));
-        allItems.add(new ItemObject("Motif 3", R.drawable.potonganragiidup));
-        allItems.add(new ItemObject("Motif 4", R.drawable.potongansadum1));
-        allItems.add(new ItemObject("Motif 5", R.drawable.potongansibolang0));
-        allItems.add(new ItemObject("Motif 6", R.drawable.potongansibolang1));
-        allItems.add(new ItemObject("Motif 7", R.drawable.potonganragiidup0));
-        allItems.add(new ItemObject("Motif 8", R.drawable.potonganragiidup1));
-        allItems.add(new ItemObject("Motif 9", R.drawable.potongansadum0));
-        allItems.add(new ItemObject("Motif 10", R.drawable.potongansadum1));
-        allItems.add(new ItemObject("Motif 11", R.drawable.potongansibolang0));
-        allItems.add(new ItemObject("Motif 12", R.drawable.potongansibolang1));
-        allItems.add(new ItemObject("Motif 13", R.drawable.potonganbintangmaratur1));
-        allItems.add(new ItemObject("Motif 14", R.drawable.potonganragiidup));
-        allItems.add(new ItemObject("Motif 15", R.drawable.potongansadum1));
-        allItems.add(new ItemObject("Motif 16", R.drawable.potongansibolang0));
-
-
-        return allItems;
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -351,12 +308,8 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -373,28 +326,5 @@ public class MainActivity extends FragmentActivity {
             super.onBackPressed();
         }
     }
-
-    private void showPopup() {
-        try {
-// We need to get the instance of the LayoutInflater
-            LayoutInflater inflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View layout = inflater.inflate(R.layout.popup,
-                    (ViewGroup) findViewById(R.id.popup_1));
-            pw = new PopupWindow(layout, 800,
-                    700, true);
-            pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
-
-            Close = (Button) layout.findViewById(R.id.close_popup);
-            Close.setOnClickListener(cancel_button);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private View.OnClickListener cancel_button = new View.OnClickListener() {
-        public void onClick(View v) {
-            pw.dismiss();
-        }
-    };
 
 }
