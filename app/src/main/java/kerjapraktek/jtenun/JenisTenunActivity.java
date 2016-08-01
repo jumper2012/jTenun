@@ -1,5 +1,6 @@
 package kerjapraktek.jtenun;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -23,9 +24,22 @@ public class JenisTenunActivity extends Activity {
     private TenunListAdapter mAdapter;
     DBHelper dbhelper;
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent myIntent = getIntent(); // gets the previously created intent
+        String nama_tenun;
+        if (myIntent.getStringExtra("nama_tenun") == null) {
+            nama_tenun = myIntent.getStringExtra("nama_tenun_back");
+        } else {
+            nama_tenun = myIntent.getStringExtra("nama_tenun");
+        }
+        final String nama_tenun_final = nama_tenun;
+        setTitle("Daftar Tenun " + nama_tenun_final);
         setContentView(R.layout.activity_jenis_tenun);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         dbhelper = new DBHelper(this);
         SQLiteDatabase sqLiteDatabase = dbhelper.getWritableDatabase();
@@ -42,6 +56,7 @@ public class JenisTenunActivity extends Activity {
                 Toast.makeText(JenisTenunActivity.this, "Clicked " + position, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(JenisTenunActivity.this, DetailActivity.class);
                 intent.putExtra(DetailActivity.EXTRA_PARAM_ID, position);
+                intent.putExtra("nama_tenun", nama_tenun_final);
                 startActivity(intent);
             }
         };
@@ -69,6 +84,9 @@ public class JenisTenunActivity extends Activity {
         if (id == R.id.action_toggle) {
             toggle();
             return true;
+        } else {
+            Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivityForResult(myIntent, 0);
         }
         return super.onOptionsItemSelected(item);
     }

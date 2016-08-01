@@ -10,14 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="jTenun"
+        android:layout_gravity="center"
         android:id="@+id/toolbar_title"
         android:textSize="21dp" />
-
-<TextureView
-    android:id="@+id/title"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    />
-
-
 </android.support.v7.widget.Toolbar>

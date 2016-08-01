@@ -1,5 +1,6 @@
 package kerjapraktek.jtenun;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
@@ -45,9 +47,14 @@ public class DetailActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mTenun = TenunData.placeList().get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
+        setTitle("Daftar Tenun " + mTenun.name);
+
+
         setContentView(R.layout.activity_detail_jenis_tenun);
 
-        mTenun = TenunData.placeList().get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         mImageView = (ImageView) findViewById(R.id.placeImage);
         mTitle = (TextView) findViewById(R.id.textView);
@@ -128,5 +135,12 @@ public class DetailActivity extends Activity {
                 startActivity(detailmotifactivity);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent Intentback = new Intent(getApplicationContext(), JenisTenunActivity.class);
+        startActivity(Intentback);
+        return true;
     }
 }

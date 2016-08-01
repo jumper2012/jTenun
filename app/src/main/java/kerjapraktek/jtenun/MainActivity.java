@@ -214,67 +214,80 @@ public class MainActivity extends FragmentActivity {
                                                                      case R.id.sasirangan:
                                                                          Toast.makeText(getApplicationContext(), "Sasirangan", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun.putExtra("nama_tenun", "Sasirangan");
                                                                          startActivity(jenis_tenun);
                                                                          return true;
                                                                      case R.id.ulos:
                                                                          Toast.makeText(getApplicationContext(), "ulos", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun1 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun1.putExtra("nama_tenun", "Ulos");
                                                                          startActivity(jenis_tenun1);
                                                                          //drawerLayout.closeDrawers();
                                                                          return true;
                                                                      case R.id.sarungbugis:
                                                                          Toast.makeText(getApplicationContext(), "sarungbugis", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun2 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun2.putExtra("nama_tenun", "Sarungbugis");
                                                                          startActivity(jenis_tenun2);
                                                                          return true;
                                                                      case R.id.lurik:
                                                                          Toast.makeText(getApplicationContext(), "lurik", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun3 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun3.putExtra("nama_tenun", "Lurik");
                                                                          startActivity(jenis_tenun3);
                                                                          return true;
                                                                      case R.id.songketlombok:
                                                                          Toast.makeText(getApplicationContext(), "songketlombok", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun4 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun4.putExtra("nama_tenun", "Songket Lombok");
                                                                          startActivity(jenis_tenun4);
                                                                          return true;
                                                                      case R.id.tapis:
                                                                          Toast.makeText(getApplicationContext(), "tapis", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun5 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun5.putExtra("nama_tenun", "Tapis");
                                                                          startActivity(jenis_tenun5);
                                                                          return true;
                                                                      case R.id.gringsing:
                                                                          Toast.makeText(getApplicationContext(), "gringsing", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun6 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun6.putExtra("nama_tenun", "Gringsing");
                                                                          startActivity(jenis_tenun6);
                                                                          return true;
                                                                      case R.id.tenundayak:
                                                                          Toast.makeText(getApplicationContext(), "tenundayak", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun7 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun7.putExtra("nama_tenun", "Dayak");
                                                                          startActivity(jenis_tenun7);
                                                                          return true;
                                                                      case R.id.besurek:
                                                                          Toast.makeText(getApplicationContext(), "besurek", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun8 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun8.putExtra("nama_tenun", "Besurek");
                                                                          startActivity(jenis_tenun8);
                                                                          return true;
                                                                      case R.id.songketpalembang:
                                                                          Toast.makeText(getApplicationContext(), "songketpalembang", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun9 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun9.putExtra("nama_tenun", "Songket Palembang");
                                                                          startActivity(jenis_tenun9);
                                                                          return true;
                                                                      case R.id.tenunulapdoyo:
                                                                          Toast.makeText(getApplicationContext(), "tenunulapdoyo", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun10 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun10.putExtra("nama_tenun", "Ulapdoyo");
                                                                          startActivity(jenis_tenun10);
                                                                          return true;
                                                                      case R.id.poleng:
                                                                          Toast.makeText(getApplicationContext(), "poleng", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun11 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun11.putExtra("nama_tenun", "Poleng");
                                                                          startActivity(jenis_tenun11);
                                                                          return true;
                                                                      case R.id.jumputan:
                                                                          Toast.makeText(getApplicationContext(), "jumputan", Toast.LENGTH_SHORT).show();
                                                                          Intent jenis_tenun12 = new Intent(MainActivity.this, JenisTenunActivity.class);
+                                                                         jenis_tenun12.putExtra("nama_tenun", "Jumputan");
                                                                          startActivity(jenis_tenun12);
                                                                          return true;
                                                                      default:
