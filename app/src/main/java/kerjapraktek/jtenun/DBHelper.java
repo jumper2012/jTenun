@@ -8,6 +8,7 @@ import android.util.Log;
 /**
  * Created by JERRY on 6/28/2016.
  */
+
 public class DBHelper extends SQLiteOpenHelper {private static final String DATABASE_NAME = "jtenun.db";
     private static final int DATABASE_VERSION = 1;
     public DBHelper(Context context) {

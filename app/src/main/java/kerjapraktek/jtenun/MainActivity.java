@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -18,6 +19,9 @@ import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import org.xdty.preference.colorpicker.ColorPickerDialog;
+import org.xdty.preference.colorpicker.ColorPickerSwatch;
+
 import java.util.ArrayList;
 
 public class MainActivity extends FragmentActivity {
@@ -27,6 +31,8 @@ public class MainActivity extends FragmentActivity {
     private DrawerLayout drawerLayout;
     SearchView searchView;
     private GridLayoutManager lLayout;
+
+    private int mSelectedColor;
 
     kerjapraktek.jtenun.adapters.GalleryAdapter mAdapter;
     RecyclerView mRecyclerView;
@@ -159,6 +165,30 @@ public class MainActivity extends FragmentActivity {
                                                                          return true;
                                                                      case R.id.war:
                                                                          Toast.makeText(getApplicationContext(), "Warna Selected", Toast.LENGTH_SHORT).show();
+                                                                         mSelectedColor = ContextCompat.getColor(MainActivity.this, R.color.flamingo);
+                                                                         int[] mColors = getResources().getIntArray(R.array.default_rainbow);
+
+                                                                         ColorPickerDialog dialog = ColorPickerDialog.newInstance(R.string.color_picker_default_title,
+                                                                                 mColors,
+                                                                                 mSelectedColor,
+                                                                                 5, // Number of columns
+                                                                                 ColorPickerDialog.SIZE_SMALL);
+                                                                         dialog.setOnColorSelectedListener(new ColorPickerSwatch.OnColorSelectedListener() {
+
+                                                                             @Override
+                                                                             public void onColorSelected(int color) {
+                                                                                 mSelectedColor = color;
+/*
+                                                                                 String hexColor = String.format("#%06X", (0xFFFFFF & color));
+                                                                                 Log.d("MYINT", "value: " + hexColor);                                                                                 Toast.makeText(getApplicationContext(), color, Toast.LENGTH_SHORT).show();
+*/
+                                                                                 Intent intent = new Intent(MainActivity.this, GenerateMotifActivity.class);
+                                                                                 startActivity(intent);
+                                                                             }
+
+                                                                         });
+                                                                         dialog.show(getFragmentManager(), "color_dialog_test");
+
                                                                          navigationView.getMenu().clear();
                                                                          navigationView.inflateMenu(R.menu.drawer);
                                                                          drawerLayout.closeDrawers();
