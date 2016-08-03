@@ -42,4 +42,52 @@
   <string name="tenunulapdoyo_string">Tenun Ulap Doyo</string>
   <string name="poleng_string">Poleng</string>
   <string name="jumputan_string">Jumputan</string>
+
+  <!-- Kegunaan Tenun-->
+  <string-array name="kegunaan">
+    <item>Acara Berduka</item>
+    <item>Pesta</item>
+    <item>Pernikahan</item>
+    <item>Upacara Adat</item>
+    <item>Busana/Pakaian</item>
+  </string-array>
+
+  <string-array name="daerah">
+    <item>Nanggro Aceh Darussalam</item>
+    <item>Sumatera Utara</item>
+    <item>Sumatera Barat</item>
+    <item>Riau</item>
+    <item>Kepulauan Riau</item>
+    <item>Jambi</item>
+    <item>Sumatera Selatan</item>
+    <item>Bangka Belitung</item>
+    <item>Lampung</item>
+    <item>Bengkulu</item>
+    <item>DKI Jakarta</item>
+    <item>Jawa Barat</item>
+    <item>Banten</item>
+    <item>Jawa Tengah</item>
+    <item>Yogyakarta</item>
+    <item>Jawa Timur</item>
+    <item>Bali</item>
+    <item>NTT</item>
+    <item>NTB</item>
+    <item>Kalimantan Barat</item>
+    <item>Kalmantan Tengah</item>
+    <item>Kalimantan Selatan</item>
+    <item>Kalmantan Timur</item>
+    <item>Kalmantan Utara</item>
+    <item>Sulawesi Utara</item>
+    <item>Sulawesi Selatan</item>
+    <item>Sulawesi Tenggara</item>
+    <item>Sulawesi Barat</item>
+    <item>Sulawesi Tengah</item>
+    <item>Gorontalo</item>
+    <item>Maluku</item>
+    <item>Maluku Utara</item>
+    <item>Papua Barat</item>
+    <item>Papua</item>
+
+  </string-array>
+
 </resources>

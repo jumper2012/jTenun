@@ -19,25 +19,14 @@ import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+
 import org.xdty.preference.colorpicker.ColorPickerDialog;
 import org.xdty.preference.colorpicker.ColorPickerSwatch;
 
 import java.util.ArrayList;
 
 public class MainActivity extends FragmentActivity {
-
-    private Toolbar toolbar;
-    private NavigationView navigationView;
-    private DrawerLayout drawerLayout;
-    SearchView searchView;
-    private GridLayoutManager lLayout;
-
-    private int mSelectedColor;
-
-    kerjapraktek.jtenun.adapters.GalleryAdapter mAdapter;
-    RecyclerView mRecyclerView;
-
-    ArrayList<kerjapraktek.jtenun.ImageModel> data = new ArrayList<>();
 
     public static String IMGS[] = {
             "https://lh3.googleusercontent.com/orI_qbPuZNn8O5MHKi4zK5nskmymzdirezMIIIXy3fmThR6CAKls3p3f96n4hpY_1UG1OaM=s85",
@@ -51,6 +40,15 @@ public class MainActivity extends FragmentActivity {
             "https://lh3.googleusercontent.com/4iBKxtcsSetR_nCfbsIsqde1QpQz3dQ0KBffCGFLf8Hdy2vjDfb0Cg5nazWKDy7ddjBc=s85",
             "https://lh3.googleusercontent.com/zbwnFlN3q0bMct3YHdcJPYmJg0g7G-aw5ZjACJIeHGv-3TRWsiwyYT3eaH760u7W8uLu2g=s85"
     };
+    SearchView searchView;
+    kerjapraktek.jtenun.adapters.GalleryAdapter mAdapter;
+    RecyclerView mRecyclerView;
+    ArrayList<kerjapraktek.jtenun.ImageModel> data = new ArrayList<>();
+    private Toolbar toolbar;
+    private NavigationView navigationView;
+    private DrawerLayout drawerLayout;
+    private GridLayoutManager lLayout;
+    private int mSelectedColor;
 
 
     public MainActivity() {
@@ -159,6 +157,22 @@ public class MainActivity extends FragmentActivity {
 
                                                                      case R.id.daerah:
                                                                          Toast.makeText(getApplicationContext(), "Daerah Selected", Toast.LENGTH_SHORT).show();
+                                                                         new MaterialDialog.Builder(MainActivity.this)
+                                                                                 .title("Pilh Daerah Pencarian")
+                                                                                 .items(R.array.daerah)
+                                                                                 .itemsCallbackMultiChoice(new Integer[]{1}, new MaterialDialog.ListCallbackMultiChoice() {
+                                                                                     @Override
+                                                                                     public boolean onSelection(MaterialDialog dialog, Integer[] which, CharSequence[] text) {
+                                                                                         boolean allowSelection = which.length <= 3; // limit selection to 2, the new selection is included in the which array
+                                                                                         if (!allowSelection) {
+                                                                                             Toast.makeText(getApplicationContext(), "Batas Limit Maksmal 3 Daerah", Toast.LENGTH_SHORT).show();
+                                                                                         }
+                                                                                         return allowSelection;
+                                                                                     }
+                                                                                 })
+                                                                                 .positiveText("Cari")
+                                                                                 .alwaysCallMultiChoiceCallback() // the callback will always be called, to check if selection is still allowed
+                                                                                 .show();
                                                                          navigationView.getMenu().clear();
                                                                          navigationView.inflateMenu(R.menu.drawer);
                                                                          drawerLayout.closeDrawers();
@@ -201,6 +215,16 @@ public class MainActivity extends FragmentActivity {
                                                                          return true;
                                                                      case R.id.kegu:
                                                                          Toast.makeText(getApplicationContext(), "Kegunaan Selected", Toast.LENGTH_SHORT).show();
+                                                                         new MaterialDialog.Builder(MainActivity.this)
+                                                                                 .title("Pilih Kegunaan Tenun")
+                                                                                 .items(R.array.kegunaan)
+                                                                                 .itemsCallback(new MaterialDialog.ListCallback() {
+                                                                                     @Override
+                                                                                     public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                                                                         Toast.makeText(getApplicationContext(), which + ": " + text, Toast.LENGTH_SHORT).show();
+                                                                                     }
+                                                                                 })
+                                                                                 .show();
                                                                          navigationView.getMenu().clear();
                                                                          navigationView.inflateMenu(R.menu.drawer);
                                                                          drawerLayout.closeDrawers();
@@ -328,6 +352,7 @@ public class MainActivity extends FragmentActivity {
         //calling sync state is necessay or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
